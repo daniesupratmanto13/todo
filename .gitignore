@@ -1,0 +1,4 @@
+settings.py
+migrations/
+.vscode
+db.sqlite3

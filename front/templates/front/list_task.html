@@ -1,0 +1,41 @@
+{% extends 'front/main_layout.html' %}
+{% load static %}
+
+{% block title %}
+  List Task
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'front/css/style.css' %}">
+{% endblock style %}
+
+{% block early-script %}
+  <script src="{% static 'front/js/csrftoken.js' %}" type="text/javascript"></script>
+{% endblock early-script %}
+
+{% block content %}
+  <div class="container">
+    <div id="task-container">
+      <div id="form-wrapper">
+        <form action="" method="POST" id="form">
+          {% csrf_token %}
+          <div class="flex-wrapper">
+            <div style="flex: 6">
+              <input type="text" id="title" class="form-control" name="title" placeholder="Add Task">
+            </div>
+            <div style="flex: 1;">
+              <button type="submit" class="btn btn-outline-dark" id="submit">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="list-wrapper">
+
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+
+{% block end-script %}
+  <script src="{% static 'front/js/task.js' %}" type="text/javascript"></script>
+{% endblock end-script %}
